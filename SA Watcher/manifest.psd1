@@ -1,7 +1,9 @@
 @{
 	Name = "SA Watcher"
+	Private = $true
 	Version = "-"
-	Architecture = "any"
+	Architecture = "*"
+	
 	Enable = {
 		Assert-Dependency "nodejs"
 	

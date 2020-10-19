@@ -1,6 +1,8 @@
 @{
 	Name = "Apache Maven"
 	Version = "3.6.3"
+	Architecture = "x64"
+	
 	Enable = {
 		Assert-Directory "./data"
 		Assert-Directory "./data/repository"

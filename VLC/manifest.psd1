@@ -1,7 +1,8 @@
 @{
 	Name = "VLC"
 	Version = "-"
-	Architecture = "amd64"
+	Architecture = "x64"
+	
 	Enable = {
 		Assert-Directory "./cache"
 
