@@ -1,6 +1,7 @@
 @{
 	Name = "Firefox"
 	Version = "78.0a1"
+	Architecture = "x64"
 	
 	Install = {
 		# installation:

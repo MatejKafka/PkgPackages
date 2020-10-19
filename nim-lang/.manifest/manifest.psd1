@@ -1,7 +1,7 @@
 @{
 	Name = "nim-lang"
 	Version = "1.2.0"
-	Architecture = "amd64"
+	Architecture = "x64"
 	Enable = {
 		Assert-Dependency mingw64
 

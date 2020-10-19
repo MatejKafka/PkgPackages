@@ -1,6 +1,7 @@
 @{
 	Name = "IntelliJ IDEA"
 	Version = "2020.1.1"
+	Architecture = "x64"
 
 	Install = {
 		$Version = $this.Version

@@ -1,7 +1,7 @@
 @{
 	Name = "Discord"
 	Version = "-"
-	Architecture = "amd64"
+	Architecture = "x64"
 	Enable = {
 		Assert-Directory "./config"
 		Assert-Directory "./cache"

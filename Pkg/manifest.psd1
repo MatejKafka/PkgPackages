@@ -1,7 +1,9 @@
 @{
 	Name = "Pkg"
 	Version = "0.2.1"
-	Architecture = "arm64"
+	# unfortunately, the fixed nim binaries for substitute executables
+	#  are not portable, so we are currently bound to x64
+	Architecture = "x64"
 	
 	Install = {
 		echo "Pkg already installed. Auto-update is not supported right now."

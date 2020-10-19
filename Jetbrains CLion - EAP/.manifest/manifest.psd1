@@ -1,6 +1,6 @@
 @{
-	Name = "Jetbrains CLion"
-	Version = "2020.2.4"
+	Name = "Jetbrains CLion (EAP)"
+	Version = "203.4203.24"
 	Architecture = "x64"
 	
 	Install = {
@@ -16,6 +16,6 @@
 		Assert-Directory "./cache"
 		Assert-Directory "./logs"
 
-		Export-Shortcut "Jetbrains CLion" "./.manifest/run.cmd" -IconPath "./app/bin/clion.ico"
+		Export-Shortcut "Jetbrains CLion (EAP)" "./.manifest/run.cmd" -IconPath "./app/bin/clion.ico"
 	}
 }

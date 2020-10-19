@@ -1,7 +1,7 @@
 @{
 	Name = "OBS Studio"
 	Version = "25.0.4"
-	Architecture = "amd64"
+	Architecture = "x64"
 	
 	Install = {
 		# download OBS Studio zip from https://github.com/obsproject/obs-studio/releases

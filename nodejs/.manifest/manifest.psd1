@@ -1,7 +1,7 @@
 @{
 	Name = "nodejs"
 	Version = "14.3.0"
-	Architecture = "amd64"
+	Architecture = "x64"
 	
 	Install = {
 		$Version = $Pkg_Manifest.Version

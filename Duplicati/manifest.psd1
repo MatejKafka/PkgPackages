@@ -1,7 +1,7 @@
 @{
 	Name = "Duplicati"
 	Version = "2.0.5.1_beta"
-	Architecture = "amd64"
+	Architecture = "x64"
 
 	Install = {
 		# download zip from website

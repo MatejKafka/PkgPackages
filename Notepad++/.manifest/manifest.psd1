@@ -1,7 +1,7 @@
 @{
 	Name = "Notepad++"
 	Version = "7.9"
-	Architecture = "amd64"
+	Architecture = "x64"
 	
 	Install = {
 		$Version = $this.Version

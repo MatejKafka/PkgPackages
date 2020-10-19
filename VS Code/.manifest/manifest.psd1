@@ -1,7 +1,7 @@
 @{
 	Name = "VS Code"
 	Version = "1.49.3"
-	Architecture = "amd64"
+	Architecture = "x64"
 	
 	Install = {
 		$Version = $Pkg_Manifest.Version

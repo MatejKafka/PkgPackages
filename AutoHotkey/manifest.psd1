@@ -1,14 +1,20 @@
 @{
 	Name = "AutoHotkey"
-	Version = "1.1.32.00"
+	Version = "1.1.33.02"
+	Architecture = @("x64", "x86")
 	
 	Install = {
-		# download most recent 1.1 zip and unzip to app
-		# https://www.autohotkey.com/download/1.1/
+		$Version = $this.Version
+		$Url = "https://www.autohotkey.com/download/1.1/AutoHotkey_$Version.zip"
+		Install-FromUrl $Url -NoSubdirectory
 	}
 	
 	Enable = {
-		Export-Shortcut "AutoHotkey" "./app/AutoHotkeyU64.exe"
 		# TODO: deal with UI Access on normal machines
+		if ([Environment]::Is64BitOperatingSystem) {
+			Export-Shortcut "AutoHotkey" "./app/AutoHotkeyU64.exe"
+		} else {
+			Export-Shortcut "AutoHotkey" "./app/AutoHotkeyU32.exe"
+		}
 	}
 }

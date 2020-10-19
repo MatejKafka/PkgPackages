@@ -1,7 +1,7 @@
 @{
 	Name = "ProcessHacker"
 	Version = "3.0.3074"
-	Architecture = "amd64"
+	Architecture = "x64"
 	
 	Install = {
 		# download zip from https://processhacker.sourceforge.io/

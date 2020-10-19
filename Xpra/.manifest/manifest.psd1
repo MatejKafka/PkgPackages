@@ -1,7 +1,7 @@
 @{
 	Name = "Xpra"
 	Version = "4.0.3"
-	Architecture = "amd64"
+	Architecture = "x64"
 	
 	Install = {
 		$URL = "http://xpra.org/dists/windows/Xpra-Client-Python3-x86_64_4.0.3-r27086.zip"
