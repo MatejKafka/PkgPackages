@@ -1,6 +1,6 @@
 @{
 	Name = "ffmpeg"
-	Version = "2020-02-13"
+	Version = "2020.02.13"
 	Architecture = "x64"
 	Enable = {
 		Export-Command "ffmpeg" "./app/bin/ffmpeg.exe"

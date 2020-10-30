@@ -18,5 +18,6 @@
 		Assert-Directory "./config"
 		
 		Export-Command "git" "./.manifest/git_wrapper.cmd" -NoSymlink
+		Export-Command "gitk" "./.manifest/gitk_wrapper.cmd" -NoSymlink
 	}
 }
