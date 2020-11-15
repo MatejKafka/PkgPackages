@@ -1,11 +1,11 @@
 @{
-	Name = "JetBrains CLion"
-	Version = "2020.2.4"
-	Architecture = "x64"
+	Name = "IntelliJ IDEA"
+	Version = "2020.2.3"
+	Architecture = @("x64", "x86")
 
 	Install = {
 		$Version = $this.Version
-		$Url = "https://download.jetbrains.com/cpp/CLion-$Version.win.zip"
+		$Url = "https://download.jetbrains.com/idea/ideaIU-$Version.win.zip"
 		Install-FromUrl $Url -NoSubdirectory
 	}
 	
@@ -17,10 +17,11 @@
 		Assert-Directory "./logs"
 
 		Assert-File "./config/idea.properties" {$this._IdeaProperties}
-		Assert-File "./config/clion64.exe.vmoptions" {Get-Content -Raw "./app/bin/clion64.exe.vmoptions"}
+		Assert-File "./config/idea64.exe.vmoptions" {Get-Content -Raw "./app/bin/idea64.exe.vmoptions"}
+		Assert-File "./config/idea.exe.vmoptions" {Get-Content -Raw "./app/bin/idea.exe.vmoptions"}
 
-		Export-Shortcut "CLion $($this.Version)" "./.manifest/clion_shortcut.cmd" -IconPath "./app/bin/clion.ico"
-		Export-Command "clion" "./.manifest/clion_command.cmd" -NoSymlink
+		Export-Shortcut "IntelliJ IDEA" "./.manifest/idea_shortcut.cmd" -IconPath "./app/bin/idea.ico"
+		Export-Command "idea" "./.manifest/idea_command.cmd" -NoSymlink
 	}
 
 # content of generated idea.properties
