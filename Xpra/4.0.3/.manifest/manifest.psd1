@@ -12,6 +12,8 @@
 		Assert-Directory .\config
 		Assert-Directory .\logs
 		
-		Export-Shortcut "Xpra" "./.manifest/launcher.cmd" -IconPath "./app/Xpra.exe"
+		Export-Shortcut "Xpra" "./.manifest/xpra_shortcut.cmd" -IconPath "./app/Xpra.exe"
+		Export-Command "xpra" "./.manifest/xpra_cmd.cmd" -NoSymlink
+		Export-Command "xpra-launcher" "./.manifest/xpra_launcher.cmd" -NoSymlink
 	}
 }
