@@ -1,12 +1,15 @@
 @{
 	Name = "OBS Studio"
-	Version = "25.0.4"
 	Architecture = "x64"
 	
+	Version = "25.0.4"
+	_Hash = "DB6214DCE625F429369F6E537A86C48ADBFA2D123B204F3E347B02CEAACA1B93"
+	
 	Install = {
-		# download OBS Studio zip from https://github.com/obsproject/obs-studio/releases
-		# (current filename is: OBS-Studio-25.0.4-Full-x64.zip)
-		# unpack to 'app'
+		$Version = $this.Version
+		$Arch = if ([Environment]::Is64BitOperatingSystem) {"x64"} else {"x86"}
+		$Url = "https://github.com/obsproject/obs-studio/releases/download/$Version/OBS-Studio-$Version-Full-$Arch.zip"
+		Install-FromUrl $Url -ExpectedHash $this._Hash -NoSubdirectory
 	}
 	
 	Enable = {

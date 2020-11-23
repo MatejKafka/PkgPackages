@@ -40,18 +40,19 @@
 
 		Export-Shortcut "Notepad++" "./app/notepad++.exe" -StartMaximized
 		Disable-DisplayScaling "./app/notepad++.exe"
+		Export-Command "notepad++" "./app/notepad++.exe" -NoSymlink
 
 
 		if (-not $NoThemeCheck) {
 			& .\.manifest\UpdateThemePath.ps1
 		} else {
-			echo "Skipping theme path check."
+			Write-Verbose "Skipping theme path check."
 		}
 
 		if ($RedirectNotepad) {
 			& .\.manifest\RedirectNotepad.ps1
 		} else {
-			echo "Skipping Notepad.exe redirect."
+			Write-Verbose "Skipping Notepad.exe redirect."
 		}
 	}
 }

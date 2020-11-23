@@ -7,7 +7,8 @@ if (-not (Test-Path $RegPath)) {
 }
 
 if ($TargetCmd -eq (Get-Item $RegPath).GetValue("Debugger", $null)) {
-	return "Notepad.exe is already redirected to Notepad++."
+	Write-Verbose "Notepad.exe is already redirected to Notepad++."
+	return
 }
 
 Set-ItemProperty $RegPath -Name Debugger -Value $TargetCmd

@@ -1,7 +1,9 @@
 @{
-	Name = "Apache Maven"
+	Name = "maven"
 	Version = "3.6.3"
 	Architecture = "x64"
+	
+	Description = "Apache Maven"
 	
 	Enable = {
 		Set-SymlinkedPath -Directory "./app/conf" "./config"

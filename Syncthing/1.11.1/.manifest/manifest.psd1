@@ -2,8 +2,8 @@
 	Name = "Syncthing"
 	Architecture = "x64"
 	
-	Version = "1.6.1"
-	_Hash = "CA336AF48100B52B70A5419165AFB2F104E45AC206F75D70DDEF5B9A458F1B78"
+	Version = "1.11.1"
+	_Hash = "7A9DD65B5A64C38986157DE1D74D2279BBD731E00FDD010DB89F4409FEC74A6B"
 	
 	Install = {
 		$Version = $this.Version
