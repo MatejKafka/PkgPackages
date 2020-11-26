@@ -2,9 +2,10 @@
 	Name = "IntelliJ IDEA"
 	Architecture = @("x64", "x86")
 
-	Version = "2020.2.3"
-	_Hash = "49af7a3c9efbc622d62684a5c0beedd476d1c535b10ed466903e85a15d522012"
-
+	Version = "2020.2.4"
+	# found at https://download.jetbrains.com/idea/ideaIU-$Version.win.zip.sha256
+	_Hash = "05e453bea03997545cd0333bd89dc658b74e362119bad185e41e5f14ebfb153c"
+	
 	Install = {
 		$Version = $this.Version
 		$Url = "https://download.jetbrains.com/idea/ideaIU-$Version.win.zip"
