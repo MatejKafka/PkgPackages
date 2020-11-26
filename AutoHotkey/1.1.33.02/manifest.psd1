@@ -12,8 +12,10 @@
 	Enable = {
 		# TODO: deal with UI Access on normal machines
 		if ([Environment]::Is64BitOperatingSystem) {
+			Export-Command "AutoHotkey" "./app/AutoHotkeyU64.exe"
 			Export-Shortcut "AutoHotkey" "./app/AutoHotkeyU64.exe"
 		} else {
+			Export-Command "AutoHotkey" "./app/AutoHotkeyU32.exe"
 			Export-Shortcut "AutoHotkey" "./app/AutoHotkeyU32.exe"
 		}
 	}

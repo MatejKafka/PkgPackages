@@ -19,6 +19,8 @@
 		Assert-File "./config/idea.properties" {$this._IdeaProperties}
 		Assert-File "./config/idea64.exe.vmoptions" {Get-Content -Raw "./app/bin/idea64.exe.vmoptions"}
 		Assert-File "./config/idea.exe.vmoptions" {Get-Content -Raw "./app/bin/idea.exe.vmoptions"}
+		# ensure auto-updates are disabled
+		Assert-File "./config/config/options/updates.xml" {$this._UpdatesXml} "./.manifest/DisableAutoUpdate.ps1"
 
 		Export-Shortcut "IntelliJ IDEA" "./.manifest/idea_shortcut.cmd" -IconPath "./app/bin/idea.ico"
 		Export-Command "idea" "./.manifest/idea_command.cmd" -NoSymlink
@@ -36,5 +38,13 @@ idea.system.path=${package.path}/cache
 idea.config.path=${package.path}/config/config
 idea.plugins.path=${package.path}/config/plugins
 idea.log.path=${package.path}/logs
+'@
+
+_UpdatesXml = @'
+<application>
+  <component name="UpdatesConfigurable">
+    <option name="CHECK_NEEDED" value="false" />
+  </component>
+</application>
 '@
 }

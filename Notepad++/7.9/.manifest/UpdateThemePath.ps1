@@ -10,12 +10,12 @@ try {
 			try {
 				$ThemePath = Resolve-Path ("./app/themes/" + $ThemeName)
 			} catch {
-				throw "Could not fix theme path - unknown theme name: '${$ThemeName}'."
+				throw "Could not fix theme path - unknown theme name: '$ThemeName'."
 			}
 			$OldPath = $_.path
 			$_.path = [String]$ThemePath
 			$Config.Save($ConfigPath)
-			echo "Fixed theme path from '${OldPath}' to '${ThemePath}'."
+			echo "Fixed theme path from '$OldPath' to '$ThemePath'."
 		}
 	}
 } catch {
