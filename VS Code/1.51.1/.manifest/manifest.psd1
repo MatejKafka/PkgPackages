@@ -1,6 +1,6 @@
 @{
 	Name = "VS Code"
-	Version = "1.49.3"
+	Version = "1.51.1"
 	Architecture = "x64"
 	
 	# there's an update API at
