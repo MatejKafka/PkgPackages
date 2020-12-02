@@ -1,10 +1,12 @@
 @{
 	Name = "Telegram"
-	Version = "2.4.4"
 	Architecture = "x86"
 	
+	Version = "2.4.3"
+	
 	Install = {
-		$Url = "https://updates.tdesktop.com/tsetup/tportable.$($this.Version).zip"
+		$Version = $this.Version
+		$Url = "https://github.com/telegramdesktop/tdesktop/releases/download/v$Version/tportable.$Version.zip"
 		Install-FromUrl $Url
 	}
 	

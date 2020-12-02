@@ -7,6 +7,7 @@
 	
 	Install = {
 		$Version = $this.Version
+		# NSIS installer, 7zip can extract these
 		$Url = "https://netix.dl.sourceforge.net/project/qbittorrent/qbittorrent-win32/" +`
 				"qbittorrent-$Version/qbittorrent_${Version}_x64_setup.exe"
 		Install-FromUrl $Url -NoSubdirectory -ExpectedHash $this._Hash
