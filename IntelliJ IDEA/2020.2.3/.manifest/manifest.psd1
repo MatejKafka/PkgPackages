@@ -3,7 +3,8 @@
 	Architecture = @("x64", "x86")
 
 	Version = "2020.2.3"
-	_Hash = "49af7a3c9efbc622d62684a5c0beedd476d1c535b10ed466903e85a15d522012"
+	# found at https://download.jetbrains.com/idea/ideaIU-$Version.win.zip.sha256
+	_Hash = "49AF7A3C9EFBC622D62684A5C0BEEDD476D1C535B10ED466903E85A15D522012"
 
 	Install = {
 		$Version = $this.Version
@@ -14,10 +15,12 @@
 	Enable = {
 		Assert-Directory "./config"
 		Assert-Directory "./config/config"
-		Assert-Directory "./config/plugins"
 		Assert-Directory "./cache"
+		Assert-Directory "./data"
+		Assert-Directory "./data/plugins"
 		Assert-Directory "./logs"
 
+		# TODO: check content for existing file
 		Assert-File "./config/idea.properties" {$this._IdeaProperties}
 		Assert-File "./config/idea64.exe.vmoptions" {Get-Content -Raw "./app/bin/idea64.exe.vmoptions"}
 		Assert-File "./config/idea.exe.vmoptions" {Get-Content -Raw "./app/bin/idea.exe.vmoptions"}
@@ -38,7 +41,7 @@ package.path=${idea.home.path}/..
 
 idea.system.path=${package.path}/cache
 idea.config.path=${package.path}/config/config
-idea.plugins.path=${package.path}/config/plugins
+idea.plugins.path=${package.path}/data/plugins
 idea.log.path=${package.path}/logs
 '@
 

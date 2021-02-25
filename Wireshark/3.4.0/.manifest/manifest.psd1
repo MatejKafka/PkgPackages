@@ -8,7 +8,7 @@
 	Install = {
 		$Version = $this.Version
 		$Url = "https://1.eu.dl.wireshark.org/win64/Wireshark-win64-$Version.exe"
-		Install-FromUrl $Url -NoSubdirectory -ExpectedHash $this._Hash
+		Install-FromUrl $Url -NoSubdirectory -ExpectedHash $this._Hash -NsisInstaller
 	}
 	
 	Enable = {

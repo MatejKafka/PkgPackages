@@ -1,16 +1,16 @@
 @{
 	Name = "WinSCP"
-	Version = "5.17.8"
 	Architecture = "x64"
-	
+
+	Version = "5.17.8"	
 	_Hash = "bfe8709a90ad3b03618c1856c4f7c70948f045d39c8783ddfe4fe24f69efecb2"
+	
 	Install = {
 		$Version = $this.Version
 		# WinSCP authors don't want people to automate downloads directly from WinSCP site, and are trying to block it
-		#  with generated one-time download URLs
-		# sourceforge is not much nicer, but this link seems to be persistent
-		$Url = "https://netix.dl.sourceforge.net/project/winscp/WinSCP/$Version/WinSCP-$Version-Portable.zip"
-		Install-FromUrl $Url -NoSubdirectory -ExpectedHash $this._Hash
+		#  with generated one-time download URLs, so we'll use sourceforge instead
+		$Url = "https://downloads.sourceforge.net/project/winscp/WinSCP/${Version}/WinSCP-${Version}-Portable.zip"
+		Install-FromUrl $Url -NoSubdirectory -ExpectedHash $this._Hash -UserAgent Wget
 	}
 	
 	Enable = {

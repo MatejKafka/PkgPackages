@@ -11,6 +11,8 @@
 	}
 	
 	Enable = {
+		Assert-Directory "./config"
+		Assert-Directory "./cache"
 		Assert-Directory "./data"
 		Assert-Directory "./data/packages"
 	

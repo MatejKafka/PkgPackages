@@ -38,7 +38,7 @@ function _Update-Subkey {
 
 
 $addons = @{
-	'app-profile'="config\profile\extensions"
+	'app-profile'="data\extensions"
 	'app-system-defaults'="app\browser\features"
 }
 
@@ -67,11 +67,11 @@ function Update-AddonPath {
 	}
 	
 	if (-not $changed) {
-		echo "Addon paths are already correct."
+		Write-Verbose "Addon paths are already correct."
 	} else {
 		# by default, PowerShell cuts of objects deeper than 2 layer for legacy reasons, which is why we explicitly specify depth
 		$root | ConvertTo-Json -Compress -Depth 64 | & $PsScriptRoot"\mozlz4.exe" --compress - $AddonStartupFile
-		echo "Updated addon paths."
+		Write-Information "Updated addon paths."
 	}
 }
 

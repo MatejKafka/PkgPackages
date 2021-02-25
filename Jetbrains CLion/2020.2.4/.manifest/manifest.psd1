@@ -15,12 +15,15 @@
 	Enable = {
 		Assert-Directory "./config"
 		Assert-Directory "./config/config"
-		Assert-Directory "./config/plugins"
 		Assert-Directory "./cache"
+		Assert-Directory "./data"
+		Assert-Directory "./data/plugins"
 		Assert-Directory "./logs"
+
 
 		Assert-File "./config/idea.properties" {$this._IdeaProperties}
 		Assert-File "./config/clion64.exe.vmoptions" {Get-Content -Raw "./app/bin/clion64.exe.vmoptions"}
+
 		# ensure auto-updates are disabled
 		Assert-File "./config/config/options/updates.xml" {$this._UpdatesXml} "./.manifest/DisableAutoUpdate.ps1"
 
@@ -38,7 +41,7 @@ package.path=${idea.home.path}/..
 
 idea.system.path=${package.path}/cache
 idea.config.path=${package.path}/config/config
-idea.plugins.path=${package.path}/config/plugins
+idea.plugins.path=${package.path}/data/plugins
 idea.log.path=${package.path}/logs
 '@
 

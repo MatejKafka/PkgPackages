@@ -17,7 +17,6 @@ goto WithoutCache
 
 
 :WithCache
-echo "with cache"
 :: get absolute path to zig cache dir
 :: batch files are absolutely atrocious and this is the simplest way I could find
 set "zig-cache-dir=%~dp0"
@@ -32,6 +31,5 @@ exit /b %errorlevel%
 
 
 :WithoutCache
-echo "without cache"
 "%~dp0\..\app\zig.exe" %*
 exit /b %errorlevel%

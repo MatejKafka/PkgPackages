@@ -27,15 +27,15 @@
 		Assert-Directory "./data/plugins"
 		Assert-Directory "./data/plugins/Config"
 
-		Set-SymlinkedPath "./app/config.xml" "./config/config.xml"
-		Set-SymlinkedPath "./app/contextMenu.xml" "./config/contextMenu.xml"
-		Set-SymlinkedPath -Directory "./app/backup" "./cache/backup"
+		Set-SymlinkedPath "./app/config.xml" "./config/config.xml" -Type File
+		Set-SymlinkedPath "./app/contextMenu.xml" "./config/contextMenu.xml" -Type File
+		Set-SymlinkedPath "./app/backup" "./cache/backup" -Type Directory
 		
 		if (-not (Get-Item ./app/plugins).LinkType -eq "SymbolicLink") {
 			if (Test-Path ./app/plugins/Config) {
 				Merge-Directories ./app/plugins/Config ./data/plugins/Config
 			}
-			Set-SymlinkedPath "./app/plugins" "./data/plugins" -Directory -Merge
+			Set-SymlinkedPath "./app/plugins" "./data/plugins" -Type Directory -Merge
 		}
 
 		Export-Shortcut "Notepad++" "./app/notepad++.exe" -StartMaximized

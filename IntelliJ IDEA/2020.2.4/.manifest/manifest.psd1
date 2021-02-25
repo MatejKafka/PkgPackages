@@ -4,7 +4,7 @@
 
 	Version = "2020.2.4"
 	# found at https://download.jetbrains.com/idea/ideaIU-$Version.win.zip.sha256
-	_Hash = "05e453bea03997545cd0333bd89dc658b74e362119bad185e41e5f14ebfb153c"
+	_Hash = "05E453BEA03997545CD0333BD89DC658B74E362119BAD185E41E5F14EBFB153C"
 	
 	Install = {
 		$Version = $this.Version
@@ -15,10 +15,12 @@
 	Enable = {
 		Assert-Directory "./config"
 		Assert-Directory "./config/config"
-		Assert-Directory "./config/plugins"
 		Assert-Directory "./cache"
+		Assert-Directory "./data"
+		Assert-Directory "./data/plugins"
 		Assert-Directory "./logs"
 
+		# TODO: check content for existing file
 		Assert-File "./config/idea.properties" {$this._IdeaProperties}
 		Assert-File "./config/idea64.exe.vmoptions" {Get-Content -Raw "./app/bin/idea64.exe.vmoptions"}
 		Assert-File "./config/idea.exe.vmoptions" {Get-Content -Raw "./app/bin/idea.exe.vmoptions"}
@@ -39,7 +41,7 @@ package.path=${idea.home.path}/..
 
 idea.system.path=${package.path}/cache
 idea.config.path=${package.path}/config/config
-idea.plugins.path=${package.path}/config/plugins
+idea.plugins.path=${package.path}/data/plugins
 idea.log.path=${package.path}/logs
 '@
 
