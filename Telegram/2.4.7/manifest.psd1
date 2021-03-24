@@ -13,9 +13,8 @@
 	
 	Enable = {
 		Assert-Directory "./data"
-	
-		# TODO: make a PR to fix this mess
-		Write-Warning "Everything is stored in ./data, because Telegram directory structure is completely fucked."
+		
+		# TODO: todo figure out how to move log.txt to separate directory
 		
 		Export-Shortcut "Telegram" "./app/Telegram.exe" -ArgumentList @(
 				"-workdir", (Resolve-Path "./data")

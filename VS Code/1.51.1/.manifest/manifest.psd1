@@ -31,8 +31,8 @@
 			return $true
 		}
 		
-		Set-SymlinkedPath "./data/user-data/User/keybindings.json" "./config/keybindings.json"
-		Set-SymlinkedPath "./data/user-data/User/settings.json" "./config/settings.json"
+		Set-SymlinkedPath "./data/user-data/User/keybindings.json" "./config/keybindings.json" File
+		Set-SymlinkedPath "./data/user-data/User/settings.json" "./config/settings.json" File
 		
 		Export-Shortcut "Visual Studio Code (VS Code)" "./.manifest/vscode_wrapper.cmd" -IconPath "./app/Code.exe"
 	}

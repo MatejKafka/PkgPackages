@@ -18,5 +18,6 @@
 			Export-Command "AutoHotkey" "./app/AutoHotkeyU32.exe"
 			Export-Shortcut "AutoHotkey" "./app/AutoHotkeyU32.exe"
 		}
+		Export-Command "Ahk2Exe" "./app/Compiler/Ahk2Exe.exe" -NoSymlink
 	}
 }

@@ -17,7 +17,7 @@
 		Assert-File "./app/portable_mode.txt"
 		
 		Assert-Directory "./app/config"
-		Set-SymlinkedPath "./app/config/obs-studio" "./config" -IsDirectory
+		Set-SymlinkedPath "./app/config/obs-studio" "./config" Directory
 		
 		# disable auto-updater
 		& ./.manifest/DisableAutoUpdater.ps1

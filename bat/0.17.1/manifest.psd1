@@ -6,6 +6,8 @@
 	_Hash = "699769A0F05D989C50BB53FA614C47130FC8BA2D68381F6922FF7C1500588325"
 	
 	Install = {
+		# TODO: this needs vcruntime140.dll
+		#  download from https://www.microsoft.com/en-us/download/details.aspx?id=52685
 		$Version = $this.Version
 		$Url = "https://github.com/sharkdp/bat/releases/download/v${Version}/bat-v${Version}-x86_64-pc-windows-msvc.zip"
 		Install-FromUrl $Url -ExpectedHash $this._Hash

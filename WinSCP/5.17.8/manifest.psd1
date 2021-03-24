@@ -19,7 +19,7 @@
 		Assert-Directory "./data"
 		
 		Assert-File "./config/WinSCP.ini" {$this._DefaultConfig}
-		Set-SymlinkedPath "./app/WinSCP.ini" "./config/WinSCP.ini"
+		Set-SymlinkedPath "./app/WinSCP.ini" "./config/WinSCP.ini" File
 	
 		# this cannot be symlink, otherwise WinSCP wouldn't find its config file
 		Export-Command "winscp" "./app/WinSCP.com" -NoSymlink

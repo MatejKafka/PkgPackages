@@ -10,7 +10,7 @@
 	}
 	
 	Enable = {
-		Set-SymlinkedPath "./app/Data" "./data" -Directory
+		Set-SymlinkedPath "./app/Data" "./data" Directory
 		Export-Shortcut "PhotoDemon" "./app/PhotoDemon.exe"
 	}
 }

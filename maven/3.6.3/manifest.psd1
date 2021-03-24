@@ -6,7 +6,7 @@
 	Description = "Apache Maven"
 	
 	Enable = {
-		Set-SymlinkedPath -Directory "./app/conf" "./config"
+		Set-SymlinkedPath "./app/conf" "./config" Directory
 		Assert-Directory "./data"
 		Assert-Directory "./data/repository"
 		
